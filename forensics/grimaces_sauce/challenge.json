@@ -1,0 +1,10 @@
+{
+  "name": "Grimace's sauce",
+  "description": "Grimace! Hamburglar haS just corrupTEd my laptop...but not before i Got to exfiltrate the secret sauce recipe! Keep it safe! -- Sincerely, Ronald. 
+  (Use password saucy to open 'grimace.7z'. MD5[grimace.7z] b7948c5e8551f714e0643653d072fd47 MD5[memory.dmp] 9951c188544da3e25d99dcc011a3f4b1)",
+  "author": ["rollingcoconut", "jrosiefire"],
+  "category": "forenics",
+  "flag": "csawctf{f0rensIcZ_I3_n0T_sAucY!}",
+  "files":["secret_sauce_recipe_from_ronald.pgp"],
+  "box": ""
+}

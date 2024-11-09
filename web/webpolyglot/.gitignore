@@ -1,0 +1,107 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Finder attributes
+Icon?
+._*
+
+# macOS Thumbnail files
+.TemporaryItems
+.Trashes
+.DS_Store
+
+# macOS generated files
+*.icloud
+
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment folders
+env/
+venv/
+ENV/
+VENV/
+.venv/
+.ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python-specific files
+*.pyo
+*.pyd
+*.pdb
+
+# Testing and Coverage
+.coverage
+.tox
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Virtual Environment
+.Python
+
+# pipenv files
+Pipfile
+Pipfile.lock
+
+# MyPy type checker
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyInstaller
+*.spec
+
+# pyenv
+.python-version
+
+# Logs and local files
+*.log
+*.pot
+*.mo
+*.pid
+*.seed
+*.swo
+*.swp
+*.swn
+*.swm
+*.swp
+
+# C extensions
+*.so
+
+# Distribution files
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE specific
+.idea/
+.vscode/
+
+# Pylint
+.pylintrc
+
+# SQL database files
+*.sqlite3
+
+# Celery beat schedule file
+celerybeat-schedule

@@ -1,0 +1,10 @@
+{
+    "name": "Keep on Shuffling",
+    "description": "If you're ever uncomfortable, I would usually shuffle away. Perhaps there is such thing as too much shuffling?",
+    "author": "simple_tuck",
+    "category": "rev",
+    "flag": "csawctf{5huffl3_5huffl3_701l_4nd_7r0ubl3}",
+    "files": [
+        "shuffle"
+    ]
+}

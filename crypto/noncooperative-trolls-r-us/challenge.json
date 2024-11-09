@@ -1,0 +1,13 @@
+{
+    "name": "noncooperative trolls r us",
+    "description": "i may be the sole witness to a crime, but that doesn't mean i need to be helpful. solve my puzzle, and i'll give you a clue...\nriddle me this, batman: what's inconveniently long and full of misdirection?\nplease remember to wrap up your food when you're done so you don't waste anything. csawctf{flag}",
+    "author": "slimecat",
+    "category": "crypto",
+    "flag": "csawctf{1vy_111_7h3_hall_w17h_a_ba53ball_ba7}",
+    "files": [
+      "noncooperative-trolls-r-us/encrypt.sage",
+      "noncooperative-trolls-r-us/keys.txt",
+      "noncooperative-trolls-r-us/thisisabinarystring.txt"
+    ]
+  }
+  

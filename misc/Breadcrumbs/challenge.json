@@ -1,0 +1,10 @@
+{
+  "name": "Bread Crumbs",
+  "description": "You are an investigator who has been on the trail of a wily threat actor for some time. While monitoring hacking forums, you notice they now claim to have developed a new fully undetectable remote access trojan. Curious about the truth of this claim, you decide to follow the actor’s challenge, testing your OSINT skills, knowledge of malware families and ability to separate “false flags” from the truth.",
+  "category": "osint",
+  "flag": "csawctf{blacklotus}",
+  "files": [
+    "forum.png"
+  ],
+  "author": "HP Wolf"
+}

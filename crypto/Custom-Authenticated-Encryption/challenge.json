@@ -1,0 +1,13 @@
+{
+  "name": ["Custom authenticated encryption"],
+  "category": "crypto",
+  "description": "We've used a flag to create our very own unbreakable authenticated encryption scheme. Try out our oracle!",
+  "flag": "csawctf{d0n'T_r0Il_cu$t0m_A3AD}",
+  "internal_port": null,
+  "type": null,
+  "initial": null,
+  "minimum": null,
+  "decay": null,
+  "box": null,
+  "files":["query.py"]
+}

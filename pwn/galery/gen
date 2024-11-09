@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+chal_name="galery";
+
+gcc -fno-stack-protector -o $chal_name $chal_name.c;
+
+echo "$chal_name";

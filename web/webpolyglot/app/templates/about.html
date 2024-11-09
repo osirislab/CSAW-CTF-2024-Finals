@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>About - Polyglot</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Slab:wght@300;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Polyglot</h1>
+            <p>Share Your Travel Experiences with the World</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('upload_post') }}">Upload Post</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>About Polyglot</h2>
+            <p>Welcome to Polyglot, your platform for sharing travel experiences from around the globe. Our mission is to inspire adventure, connect travelers, and showcase the beauty of diverse cultures and landscapes.</p>
+        </section>
+
+        <section class="about-content">
+            <h3>Our Mission</h3>
+            <p>At Polyglot, we believe in the transformative power of travel. Whether you’re exploring a bustling city or a remote natural wonder, each journey brings new insights and connections. We provide a space where adventurers can document their experiences, share stories, and inspire others to see the world.</p>
+            
+            <h3>Our Story</h3>
+            <p>Founded by a group of avid travelers, Polyglot was created to be more than just a blog. It's a community of people who understand that travel is about growth, connection, and discovery. We aim to make it easy for travelers to capture and share their unique perspectives with a global audience.</p>
+            
+            <h3>Get Involved</h3>
+            <p>We invite you to join the Polyglot community by sharing your own travel stories. Whether you’re a seasoned explorer or a first-time traveler, your experiences have the power to inspire others. Sign up, upload your stories, and become part of our global journey.</p>
+        </section>
+
+        <section class="back-link">
+            <a href="{{ url_for('home') }}" class="button">Back to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Polyglot - All rights reserved.</p>
+    </footer>
+</body>
+</html>

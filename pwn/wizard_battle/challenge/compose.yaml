@@ -1,0 +1,18 @@
+services:
+  challenge:
+    container_name: wizard_battle
+    hostname: wizard_battle
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7701:7701"
+    networks:
+      - no-access
+
+networks:
+  no-access:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_ip_masquerade: "false"

@@ -1,0 +1,5 @@
+to solve the program, either statically disassemble app.jar to the point where each opcode and operand is identified and reconstructed to mimic demo/pseudo.asm, 
+after which compile and determine how to approach it
+
+or start jabbing in the dark and realize that flipping jne to je might bypass password check, bytepatch app.jar using bytecode_viewer under jne() the ifne opcode to ifeq
+and input an incorrect password to get flag output.

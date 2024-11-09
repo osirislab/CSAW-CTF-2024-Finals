@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>{{ post.title }} - Polyglot</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Slab:wght@300;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Polyglot</h1>
+            <p>Share Your Travel Experiences with the World</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('upload_post') }}">Upload Post</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post-detail">
+            <h2>{{ post.title }}</h2>
+            <p class="post-date">Published on {{ post.date_posted.strftime('%B %d, %Y') if post.date_posted else "Unknown Date" }}</p>
+            
+            <div class="post-image">
+                <img src="{{ url_for('static', filename='uploads/' + post.image_filename) if post.image_filename else url_for('static', filename='images/travel_intro.webp') }}" alt="Post Image">
+            </div>
+
+            <div class="post-content">
+                <p>{{ post.content }}</p>
+            </div>
+        </section>
+
+        <section class="back-link">
+            <a href="{{ url_for('home') }}" class="button">Back to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Polyglot - All rights reserved.</p>
+    </footer>
+
+    {% if post.script_pack %}
+    <script src="{{ url_for('static', filename=post.script_pack) }}" defer></script>
+    {% endif %}
+</body>
+</html>

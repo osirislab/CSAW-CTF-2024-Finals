@@ -1,0 +1,8 @@
+{
+    "name": "AOT",
+    "category": "rev",
+    "description": "I'm two steps ahead of you. Can you crack my lockbox?",
+    "flag": "csawctf{3v3ry0n3_h4d_70_b3_drunk_0n_50m37h1n6_70_k33p_pu5h1n6_0n}",
+    "author": "keeboi",
+    "files": ["./aot.exe"]
+}

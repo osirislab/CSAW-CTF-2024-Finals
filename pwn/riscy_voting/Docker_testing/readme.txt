@@ -1,0 +1,1 @@
+This directory contains artifacts to confirm how players can confirm the location of the BSS section in the deployed Docker container, regardless of the OS they use for development ("docker_version_tests") and shows how someone would configure a Docker container to run the RISC-V challenge and debug it from outside ("docker_debugging_example").

@@ -1,0 +1,10 @@
+{
+  "name": "Rocket Man",
+  "description": "I just took this image, which contains not just one, not two, but THREE missile bases here, in addition to one air base! Can you find the names of all four? Flag Format: csawctf{Base1Name_Base2Name_Base3Name_Base4Name} Bases are in ALPHABETICAL ORDER a-z, do not use accents. Use the romanized names, and keep all non-accent characters such as dashes or apostrophes in the name, if there are any.",
+  "author": "lpv2013",
+  "category": "misc",
+  "flag": "csawctf{Chiha-ri_Kal-Gol_Koksan_Sing'ye}"
+  "files": [
+    "rocketman.png"
+  ]
+}

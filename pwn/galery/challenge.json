@@ -1,0 +1,9 @@
+{
+  "name": "Galery",
+  "description": "Our advanced software creates the best art reproductions in town! Go ahead and try it! nc ${ip} ${port}",
+  "author": "gummiebear",
+  "category": "pwn",
+  "flag": "csawctf{h4Nd_r0ll1ng_B1tm4p_p4rsErs_1s_fuN!}",
+  "files": ["galery", "libc.so.6"],
+  "box": "pwn.galery.csaw.io"
+}

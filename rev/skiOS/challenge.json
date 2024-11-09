@@ -1,0 +1,8 @@
+{
+    "name": "ski",
+    "category": "rev",
+    "description": "I'm trying to login into the app...\n\nNOTE: There is a typo in the challenge where the flag is prefaced with `csaw_ctf` instead of `csawctf`. Please submit the flag with `csawctf`.",
+    "flag": "csawctf{purpleiscomingapple}",
+    "author": "Aneesh Maganti",
+    "files": ["./chal/ski.ipa"]
+}

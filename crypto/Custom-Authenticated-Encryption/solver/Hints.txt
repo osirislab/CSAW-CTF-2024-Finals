@@ -1,0 +1,5 @@
+Hints
+
+1. Send the same 16-byte block to the authenticated oracle in different block positions. This will help you identify the encryption scheme which is used in the oracle.
+2. Send different messages of length k*16 to the oracle. Look at the last 32 bytes of the returned ciphertext. Compare it to the output returned by the oracle when an empty string is sent to the oracle. 
+3. Our oracle does the following: Enc(m||flag||pad). 

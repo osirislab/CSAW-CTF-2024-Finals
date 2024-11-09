@@ -1,0 +1,5 @@
+Hints to solve the challenge ...
+
+1. Use the bitmap header with the body
+2. Look at the picture to find the password
+3. To find the flag look at the decrypted picture

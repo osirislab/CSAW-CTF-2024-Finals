@@ -1,0 +1,39 @@
+FROM ubuntu:22.04 AS builder
+RUN DEBIAN_FRONTEND=noninteractive \
+  apt -y update && apt -y upgrade && \
+  apt -y install wget autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build
+
+RUN wget https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.09.03/riscv64-glibc-ubuntu-22.04-gcc-nightly-2024.09.03-nightly.tar.gz
+
+RUN tar xf riscv64-glibc-ubuntu-22.04-gcc-nightly-2024.09.03-nightly.tar.gz
+ENV PATH="$PATH:/riscv/bin"
+RUN mkdir -p /src
+RUN mkdir -p /build
+COPY ./src/wizard_battle.c /src/wizard_battle.c
+WORKDIR /src
+RUN /riscv/bin/riscv64-unknown-linux-gnu-gcc -w -static -z execstack wizard_battle.c -o ../build/wizard_battle
+RUN /riscv/bin/riscv64-unknown-linux-gnu-strip --strip-all ../build/wizard_battle
+
+FROM ubuntu:22.04
+
+RUN DEBIAN_FRONTEND=noninteractive \
+  apt -y update && apt -y upgrade && \
+  apt -y install qemu-user qemu-user-static socat
+
+RUN useradd -ms /bin/sh chal
+WORKDIR /home/chal
+
+COPY --from=builder /build/wizard_battle .
+COPY ./flag.txt /home/chal/flag.txt
+COPY ./optout /home/chal/optout
+
+RUN chown -R root:chal /home/chal && \
+    chmod 750 /home/chal && \
+    chmod 550 /home/chal/wizard_battle && \
+    chown root:chal /home/chal/flag.txt && \
+    chmod 444 /home/chal/flag.txt && \
+    chmod 660 /home/chal/optout
+
+EXPOSE 7701
+
+CMD ["socat","-T6000", "TCP-LISTEN:7701,reuseaddr,fork,su=chal","EXEC:/usr/bin/qemu-riscv64-static wizard_battle"]

@@ -1,0 +1,18 @@
+services:
+  challenge:
+    container_name: riscy_voting
+    hostname: riscy_voting
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7702:7702"
+    networks:
+      - no-access
+
+networks:
+  no-access:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_ip_masquerade: "false"

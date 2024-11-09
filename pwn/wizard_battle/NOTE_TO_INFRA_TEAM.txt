@@ -1,0 +1,3 @@
+To the person deploying this: don't forget to add `nc \{IP_ADDR\} \{PORT\}` to the challenge description. Looks like that's not done by default in the challenge.json files from quals, so here's a reminder.
+
+Also, note I used the original `flag{}` format (not `csawctf{})` format for the flag. Feel free to change that as you see fit. It won't affect the solver. I did that because that's the way we used to format flags from around 2005-2022. It's one of those touches that makes CSAW CTF iconic, but times do change!  

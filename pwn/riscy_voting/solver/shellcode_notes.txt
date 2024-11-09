@@ -1,0 +1,57 @@
+
+
+    __asm("li a0,0x0068732f6e69622f\n\t"
+          "sd a0, 0(sp)\n\t"
+          "addi a0,sp,0\n\t"
+          "li a2,0x0\n\t"
+          "li a1,0x0\n\t"
+          "li a7,221\n\t"
+          "ecall\n\t"
+          "li a7,93\n\t"
+          "ecall\n\t");
+compiles to
+
+   0x10508 <main+16>: lui a0,0x34399
+=> 0x1050c <main+20>: addiw a0,a0,1975
+   0x10510 <main+24>: slli  a0,a0,0xc
+   0x10512 <main+26>: addi  a0,a0,843
+   0x10516 <main+30>: slli  a0,a0,0xd
+   0x10518 <main+32>: addi  a0,a0,559
+   0x1051c <main+36>: sd  a0,0(sp)
+   0x1051e <main+38>: mv  a0,sp
+   0x10520 <main+40>: li  a2,0
+   0x10522 <main+42>: li  a1,0
+   0x10524 <main+44>: li  a7,221
+   0x10528 <main+48>: ecall
+   0x1052c <main+52>: li  a7,93
+
+
+Or: 
+    __asm("li a0, 0x6e69622f\n\t"
+          "addi sp,sp,-8\n\t"
+          "sd a0,0(sp)\n\t"
+          "li a0, 0x0068732f\n\t"
+          "sd a0, 4(sp)\n\t"
+          "addi a0,sp,0\n\t"
+          "li a2,0x0\n\t"
+          "li a1,0x0\n\t"
+          "li a7,221\n\t"
+          "ecall\n\t"
+          "li a7,93\n\t"
+          "ecall\n\t");
+
+compiles to 
+   0x10508 <main+16>:  lui a0,0x6e696
+=> 0x1050c <main+20>: addiw a0,a0,559
+   0x10510 <main+24>: addi  sp,sp,-8
+   0x10512 <main+26>: sd  a0,0(sp)
+   0x10514 <main+28>: lui a0,0x687
+   0x10518 <main+32>: addiw a0,a0,815
+   0x1051c <main+36>: sd  a0,4(sp)
+   0x10520 <main+40>: mv  a0,sp
+   0x10522 <main+42>: li  a2,0
+   0x10524 <main+44>: li  a1,0
+   0x10526 <main+46>: li  a7,221
+   0x1052a <main+50>: ecall
+   0x1052e <main+54>: li  a7,93
+   0x10532 <main+58>: ecall

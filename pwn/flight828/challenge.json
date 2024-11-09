@@ -1,0 +1,10 @@
+{
+  "name": "flight828",
+  "description": "socat - TCP:${ip}:5454",
+  "author": "ScriptKiddo",
+  "category": "pwn",
+  "flag":"csawctf{bUfF3R_oV3rFl0w_JuMP2InstRuct10ns_bYp455_c4N4r1eS_XpL01tD0nE!}",
+  "port": 5454,
+  "files": ["repeat"],
+  "box": ""
+}

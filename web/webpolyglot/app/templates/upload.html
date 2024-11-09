@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>Upload Blog Post - Polyglot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Slab:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Polyglot</h1>
+            <p>Share Your Travel Experiences with the World</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('upload_post') }}">Upload Post</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Upload a New Blog Post</h2>
+            <p>Share your latest travel experience with the Polyglot community!</p>
+        </section>
+
+        <section class="upload-form">
+            <form action="{{ url_for('upload_post') }}" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="post_title">Post Title:</label>
+                    <input type="text" id="post_title" name="post_title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="post_body">Post Content:</label>
+                    <textarea id="post_body" name="post_body" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="file">Upload Image (WEBP ONLY):</label>
+                    <input type="file" id="file" name="file" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="script_pack">Select Theme Script Pack (optional):</label>
+                    <select id="script_pack" name="script_pack">
+                        <option value="">None</option>
+                        <option value="js/sunsetPack.js">Sunset Theme</option>
+                        <option value="js/oceanPack.js">Ocean Theme</option>
+                        <option value="js/nightPack.js">Night Mode</option>
+                    </select>
+                </div>
+
+                <button type="submit">Upload Post</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Polyglot - All rights reserved.</p>
+    </footer>
+</body>
+</html>

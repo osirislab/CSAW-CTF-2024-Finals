@@ -1,0 +1,8 @@
+{
+  "name": "Wizard Battle",
+  "description": "You don't want to opt out of this challenge!\n\nPlease note that there is a 'retro' style flag in honor of old CSAW in this challenge. The flag format for this challenge is `flag{}`",
+  "author": "N4T_20",
+  "category": "pwn",
+  "flag": "flag{Cl1ck_h3r3_t0_c4nc3l_n0t_b31ng_r3m0v3d_fr0m_th3_l1st_t0_n0t_opt_0ut}",
+  "files": [Dockerfile_original_with_builder, wizard_battle]
+}

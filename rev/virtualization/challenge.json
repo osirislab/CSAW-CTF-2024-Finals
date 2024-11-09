@@ -1,0 +1,8 @@
+{
+    "name": "niltoK",
+    "category": "rev",
+    "description": "I love virtualizing x86 instruction sets and I recently learned Kotlin, now I can make x86 programs, with the added perk of WORA(Write Once Run Anywhere)™. (I hate kotlin)",
+    "flag": "csawctf{K0TL1N_1S_0K4Y}",
+    "author": "nikobelic29",
+    "files": ["app.jar"]
+}

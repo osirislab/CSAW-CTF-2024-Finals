@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>Polyglot - Share Your Travel Experiences</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Slab:wght@300;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Polyglot</h1>
+            <p>Share Your Travel Experiences with the World</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('upload_post') }}">Upload Post</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <img src="{{ url_for('static', filename='images/travel_intro.webp') }}" alt="Travel Intro Image">
+            <p>Welcome to Polyglot, where travelers come together to share their unique experiences across the globe. Whether you’re a digital nomad, an adventure seeker, or a culture enthusiast, you’ll find stories that inspire and inform.</p>
+        </section>
+
+        <section class="posts">
+            <h2>Featured Travel Stories</h2>
+            {% for post in posts %}
+            <div class="post">
+                <img src="{{ url_for('static', filename='uploads/' + post.image_filename) if post.image_filename else url_for('static', filename='images/default.jpg') }}" alt="{{ post.title }} Image">
+                <h3><a href="{{ url_for('entry', post_id=post.id) }}">{{ post.title }}</a></h3>
+                <p class="post-excerpt">{{ post.content }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Polyglot - All rights reserved.</p>
+    </footer>
+</body>
+</html>

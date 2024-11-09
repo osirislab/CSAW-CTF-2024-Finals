@@ -1,0 +1,18 @@
+NTRU: https://eprint.iacr.org/2021/999.pdf use matrix reduction and public key to find private key and plaintext due to NTRU overstretching
+1. solve(pub, N, p, q, d) builds the matrix and returns a list of possible vectors. everything above it is a helper function for it.
+    - entries of the returned list should be a tuple (list priv key, polynomial plaintext) like:
+        ([0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        x^54 - x^53 - x^51 - 2*x^50 - x^49 + x^47 + x^46 - 2*x^45 + 2*x^44 + x^43 + x^42 - 2*x^41 + 2*x^40 + x^39 + 2*x^35 + x^33 - 2*x^32 - x^31 + x^30 + x^29 + x^28 + x^27 + x^26 + 2*x^25 + x^23 + 2*x^22 - 2*x^20 + 2*x^19 - x^18 - 2*x^16 - x^14 - 2*x^13 + x^12 + x^11 - 2*x^10 - 2*x^9 + 2*x^8 + 2*x^7 - x^6 - 2*x^5 - x^4 - x^3 + 2*x^2 - x)
+    - people should know they found a viable plaintext when f is valid (has an inversion over p):
+        - my solution has finding the f inv mod p and decyption in a "try" block so the except prints "invalid f" and i can see there's an issue
+
+post ntru ciphers
+2. input_ascii_to_bin(string from thisisabinarystring.txt) translates to binary using the "misdirection" clue
+    - results in:
+        "1110110111001000011110001110111100110001011111100100100111010101100011100101010011011111000000000000001010110111010011011100010100010101111101010011010000010100001001000000010111110111111100111100001110101001110000111100000011100101010000111011110010001011101010100011011100110101111111000001011111011110010011110011001010011100001101101110010010100110011010111101111110101100110101100101111000101000010101010010010010110001111001011011011101010111001111010101101101100010011101010100011011111001010010001011010110010110001000111011000000001101001100110001011010010110110111110001110110011111010110010100100111101101000011111100001001010100101101100110101000101110011001000100111010101110101101011001110011110100100001011001001110111011010011011101011110000001101101100011000000101110111101100000110110101101010101100010110011110011001101101000100110111010011011001100011110101101110010100101101000110100010010110010001110110100111001011101111001001001001000000101101001101110011010100101101111111100010010111011010110010010001001111011000001100000001010010000101111111110110000000000000010011001010110100100100111101101000010011100001001010111101100000111111000101100"
+3. check_keys(possible_keys, bin_ciphertext) where possible_keys is the result of [1] and bin_ciphertext is the result of [2], takes each _,m = possible_keys[i], translates m from base5 to binary and repeats m to get a binary string of equal length bin_ciphertext, xors this with bin_ciphertext, translates to ascii. 
+    - entries of returned list should be identical, all of them this string: 
+        'thiscantberight+surelyitsover?[206,96,5,_,206,206,206,_,108,173,62,_,173,20,26,26,_,202,206,108,173,_,20,_,143,20,73,62,143,20,26,26,_,143,20,108]'
+4. decipher(bns[i], string from thisisabinarystring.txt) where bns is the result of [3]. removes all "misdirection" letters from thisisabinarystring.txt and uses bns numbers as string indexes 
+    - returns flag (WITHOUT csawctf{} wrapper):
+        "1vy_111_7h3_hall_w17h_a_ba53ball_ba7"
